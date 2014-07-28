@@ -214,7 +214,8 @@ class ssmtp (
     group   => $ssmtp::config_file_group,
     require => Package[$ssmtp::package],
     source  => $ssmtp::manage_file_source,
-    content => $ssmtp::manage_file_content,
+# You cannot specify more than one of content, source, target
+#    content => $ssmtp::manage_file_content,
     replace => $ssmtp::manage_file_replace,
     audit   => $ssmtp::manage_audit,
     noop    => $ssmtp::noops,
